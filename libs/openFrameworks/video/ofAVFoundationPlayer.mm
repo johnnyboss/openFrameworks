@@ -63,8 +63,8 @@ bool ofAVFoundationPlayer::load(string path)
 //--------------------------------------------------------------
 void ofAVFoundationPlayer::close()
 {
-    pixels.clear();
-    
+//    pixels.clear();
+
     if (moviePlayer != nil) {
         [moviePlayer release];
         moviePlayer = nil;
@@ -140,7 +140,7 @@ bool ofAVFoundationPlayer::isFrameNew() const
 const ofPixels & ofAVFoundationPlayer::getPixels() const
 {
     if (!isLoaded() ){
-        ofLogError("ofAVFoundationPlayer::getPixels()") << "Returning pixels that may be unallocated. Make sure to initialize the video player before calling getPixels.";
+//        ofLogError("ofAVFoundationPlayer::getPixels()") << "Returning pixels that may be unallocated. Make sure to initialize the video player before calling getPixels.";
     }
     return pixels;
 }
@@ -149,7 +149,7 @@ const ofPixels & ofAVFoundationPlayer::getPixels() const
 ofPixels & ofAVFoundationPlayer::getPixels()
 {
     if (!isLoaded() ){
-        ofLogError("ofAVFoundationPlayer::getPixels()") << "Returning pixels that may be unallocated. Make sure to initialize the video player before calling getPixels.";
+//        ofLogError("ofAVFoundationPlayer::getPixels()") << "Returning pixels that may be unallocated. Make sure to initialize the video player before calling getPixels.";
     }
     return pixels;
 }
