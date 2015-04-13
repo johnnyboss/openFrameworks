@@ -169,8 +169,10 @@
 - (void)dealloc
 {
     [self stop];
-    
-    self.playerItemVideoOutput = nil;
+
+    if (self.playerItemVideoOutput != nil) {
+        self.playerItemVideoOutput = nil;
+    }
 
     if (_textureCache != NULL) {
         CVOpenGLTextureCacheRelease(_textureCache);
@@ -192,8 +194,10 @@
         self.playerItem = nil;
     }
 
-    [self.player replaceCurrentItemWithPlayerItem:nil];
-    self.player = nil;
+    if (self.player != nil) {
+        [self.player replaceCurrentItemWithPlayerItem:nil];
+        self.player = nil;
+    }
 
     [super dealloc];
 }
