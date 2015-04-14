@@ -63,7 +63,7 @@ bool ofAVFoundationPlayer::load(string path)
 //--------------------------------------------------------------
 void ofAVFoundationPlayer::close()
 {
-//    pixels.clear();
+    pixels.clear();
 
     if (moviePlayer != nil) {
         [moviePlayer release];
